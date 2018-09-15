@@ -1,23 +1,23 @@
 /* eslint-disable */
-import React from "react";
-import PropTypes from "prop-types";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Switch, Route, Redirect } from 'react-router-dom';
 // creates a beautiful scrollbar
-import PerfectScrollbar from "perfect-scrollbar";
-import "perfect-scrollbar/css/perfect-scrollbar.css";
+import PerfectScrollbar from 'perfect-scrollbar';
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 // core components
-import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
-import Sidebar from "components/Sidebar/Sidebar.jsx";
+import Header from 'components/Header/Header.jsx';
+import Footer from 'components/Footer/Footer.jsx';
+import Sidebar from 'components/Sidebar/Sidebar.jsx';
 
-import dashboardRoutes from "routes/dashboard.jsx";
+import dashboardRoutes from 'routes/dashboard.jsx';
 
-import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
+import dashboardStyle from 'assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx';
 
-import image from "assets/img/sidebar-2.jpg";
-import logo from "assets/img/reactlogo.png";
+import image from 'assets/img/sidebar-2.jpg';
+const logo = 'https://storage.googleapis.com/slice-of-heaven/logo.png';
 
 const switchRoutes = (
   <Switch>
@@ -41,7 +41,7 @@ class App extends React.Component {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
   getRoute() {
-    return this.props.location.pathname !== "/maps";
+    return this.props.location.pathname !== '/maps';
   }
   resizeFunction() {
     if (window.innerWidth >= 960) {
@@ -49,10 +49,10 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-    if (navigator.platform.indexOf("Win") > -1) {
+    if (navigator.platform.indexOf('Win') > -1) {
       const ps = new PerfectScrollbar(this.refs.mainPanel);
     }
-    window.addEventListener("resize", this.resizeFunction);
+    window.addEventListener('resize', this.resizeFunction);
   }
   componentDidUpdate(e) {
     if (e.history.location.pathname !== e.location.pathname) {
@@ -63,7 +63,7 @@ class App extends React.Component {
     }
   }
   componentWillUnmount() {
-    window.removeEventListener("resize", this.resizeFunction);
+    window.removeEventListener('resize', this.resizeFunction);
   }
   render() {
     const { classes, ...rest } = this.props;
@@ -71,7 +71,7 @@ class App extends React.Component {
       <div className={classes.wrapper}>
         <Sidebar
           routes={dashboardRoutes}
-          logoText={"Creative Tim"}
+          logoText={'Terminal'}
           logo={logo}
           image={image}
           handleDrawerToggle={this.handleDrawerToggle}
