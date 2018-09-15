@@ -17,7 +17,9 @@ import dashboardRoutes from 'routes/dashboard.jsx';
 import dashboardStyle from 'assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx';
 
 import image from 'assets/img/sidebar-2.jpg';
-const logo = 'https://storage.googleapis.com/slice-of-heaven/logo.png';
+import { getPublicUrl } from '../../web-commons/Images';
+
+const logo = getPublicUrl(`logo.png`);
 
 const switchRoutes = (
   <Switch>
